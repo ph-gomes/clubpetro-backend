@@ -1,5 +1,7 @@
 # Documentação - Sistema Antifraude
 
+Na revenda de combustíveis, mais especificamente no programa de fidelidade do Posto de Combustíveis, é necessário um processo de auditoria para verificar se a pontuação de determinado cliente é de fato genuína. Vendas que são suspeitas de fraude vão para uma tabela onde um usuário credenciado pode aprovar ou desaprovar a venda.
+
 ## Objetivo
 
 Construção de um servidor que receba informações de uma venda e, se baseando em determinadas regras de negócio, identifique essa venda como fraudulenta ou não. A arquitetura recebe vendas em um sistema de mensageria, que assim é enviado a mesma informação para diversos lugares.
