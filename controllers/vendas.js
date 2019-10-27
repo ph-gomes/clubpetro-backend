@@ -13,6 +13,13 @@ const transformDate = date => {
   return { firstDate, lastDate };
 };
 
+const countFrentistaVendas = async frentista => {
+  return await Venda.countDocuments({
+    frentista: frentista._id,
+    status: "aprovado"
+  });
+};
+
 const countFrentistaVendasMes = async (frentista, date) => {
   const { firstDate, lastDate } = transformDate(date);
 
@@ -59,6 +66,7 @@ const createVenda = async data => {
 module.exports = {
   countAbastecimentoMes,
   countFrentistaCliente,
+  countFrentistaVendas,
   countFrentistaVendasMes,
   countVendas,
   createVenda

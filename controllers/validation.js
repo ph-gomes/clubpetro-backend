@@ -1,4 +1,10 @@
-module.exports = validate = (resultFVM, resultVT, resultAM, resultFC) => {
+module.exports = validate = (
+  resultFVM,
+  resultFV,
+  resultVT,
+  resultAM,
+  resultFC
+) => {
   const errors = [];
 
   if (resultFVM >= 20)
@@ -6,7 +12,7 @@ module.exports = validate = (resultFVM, resultVT, resultAM, resultFC) => {
       error: 101,
       msg: "Máximo de vendas por mes excedido"
     });
-  if (resultFVM >= resultVT * 0.2)
+  if (resultFV >= resultVT * 0.2)
     errors.push({
       error: 102,
       msg: "Máximo de vendas excedido"

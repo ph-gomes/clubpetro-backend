@@ -21,13 +21,20 @@ io.on("connection", socket => {
     const date = msg.date ? new Date(msg.date) : new Date();
     let result = {};
 
-    if (frentista && cliente) {
+    if (frentista && cliente && msg.valor) {
       const resultFVM = await vendas.countFrentistaVendasMes(frentista, date);
+      const resultFV = await vendas.countFrentistaVendas(frentista);
       const resultVT = await vendas.countVendas();
       const resultAM = await vendas.countAbastecimentoMes(cliente, date);
       const resultFC = await vendas.countFrentistaCliente(cliente, frentista);
 
-      const errors = validate(resultFVM, resultVT, resultAM, resultFC);
+      const errors = validate(
+        resultFVM,
+        resultFV,
+        resultVT,
+        resultAM,
+        resultFC
+      );
 
       const data = {
         valor: parseFloat(msg.valor),
