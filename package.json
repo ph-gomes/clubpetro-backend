@@ -4,7 +4,7 @@
   "description": "**Sistema antifraude:** Na revenda de combustíveis, mais especificamente no programa de fidelidade do Posto de Combustíveis, é necessário um processo de auditoria para verificar se a pontuação de determinado cliente é de fato genuína. Vendas que são suspeitas de fraude vão para uma tabela onde um usuário credenciado pode aprovar ou desaprovar a venda.",
   "main": "index.js",
   "dependencies": {
-    "mongoose": "^5.7.7",
+    "mongoose": "^5.13.15",
     "mongoose-unique-validator": "^2.0.3",
     "socket.io": "^2.3.0"
   },
